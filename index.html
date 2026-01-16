@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clean Side-by-Side View</title>
+    <style>
+      /* Remove all margins and scrollbars from the main container */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .viewer {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      iframe {
+        flex: 1; /* This ensures both frames take up exactly 50% width */
+        height: 100%;
+        border: none;
+        border-right: 1px solid #444; /* Optional: a thin divider line */
+      }
+
+      iframe:last-child {
+        border-right: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="viewer">
+      <iframe src="https://erdetfredag.dk/"></iframe>
+      <iframe src="https://czytopiatek.pl/"></iframe>
+    </div>
+  </body>
+</html>
